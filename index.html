@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlackJack</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="./images/blackjack-favicon.jpg">
+  <link rel="stylesheet" href="./css/index.css">
+  <script src="./scripts/app.js" defer></script>
+</head>
+<body>
+  <header class="main-header"></header>
+  <main>
+    <div class="wraper">
+      <div class="cards">
+        <ul class="cards__list">
+          <li class="card"></li>
+          <li class="card"></li>
+          <li class="card"></li>
+          <li class="card"></li>
+          <li class="card"></li>
+        </ul>
+      </div>
+      <div class="cards">
+        <ul class="cards__list">
+          <li class="card"></li>
+          <li class="card"></li>
+          <li class="card"></li>
+          <li class="card"></li>
+          <li class="card"></li>
+        </ul>
+      </div>
+      <div class="button-box">
+        <button class="button" id="take-card">Take card</button>
+      </div>
+      <div class="deck">
+        <img class="deck__img" src="./images/deck.jpg" alt="card" draggable="true">
+      </div>
+      <div class="button-box" id="start-game">
+        <button class="button" id="start">New game</button>
+      </div>
+      <div class="score-panel">
+        <h3>SCORE</h3>
+        <h5>Computer</h5>
+        <div class="score" id="computer">
+          <p>0</p>
+        </div>
+        <h5>You</h5>
+        <div class="score" id="user">
+          <p>0</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

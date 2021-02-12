@@ -1,0 +1,10 @@
+.main-header {
+  position: relative;
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-position: top 40% left 0;
+  box-shadow: 2px 5px 5px 5px rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 43vh;
+  margin-bottom: 3rem;
+}

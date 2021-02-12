@@ -1,0 +1,36 @@
+.score-panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #082b17;
+  border-radius: 10px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+  width: 11rem;
+  height: 15rem;
+  left: 3%;
+  top: 25%;
+}
+
+.score-panel h3, h5 {
+  color: #da9f0b;
+  margin: 0.75rem 0;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color:#fff;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+}
+
+.score p {
+  font-size: 1.5rem;
+  margin: auto 0;
+}
+
+

@@ -1,0 +1,21 @@
+.deck {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+  height: 15rem;
+  right: 2.5%;
+  top: 25%;
+}
+
+.deck:hover {
+  cursor: pointer;
+  box-shadow: 0 1px 8px #da9f0b;
+}
+
+.deck img {
+  height: 100%;
+}
