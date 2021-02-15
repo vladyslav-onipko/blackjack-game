@@ -110,7 +110,7 @@ class Score {
 
 class Player extends Deck {
   playerCards = document.querySelector('.cards').nextElementSibling;
-  _position = 1;
+  static position = 1;
 
   constructor() {
     super();
@@ -185,7 +185,7 @@ class Player extends Deck {
       score.calcScore(+playerCard.value, +computerCard.value);
     }
 
-    computer.putCard(this._position++);
+    computer.putCard(Player.position++);
     this.drowCard(playerCard, event);
     target.classList.remove('droppable');
    });
@@ -202,6 +202,7 @@ class Game {
     playerCards.forEach(card => card.innerHTML = '');
     document.getElementById('user').querySelector('p').textContent = 0;
     document.getElementById('computer').querySelector('p').textContent = 0;
+    Player.position = 1;
   } 
 
   static play() {
