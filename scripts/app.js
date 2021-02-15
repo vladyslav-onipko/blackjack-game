@@ -59,7 +59,7 @@ class Score {
   computerScoreElement = document.getElementById('computer').querySelector('p');
 
   checkWinner(playerScore, computerScore) {
-    if (playerScore > 21 && computerScore <= 21) {
+    if (playerScore > 21 && computerScore <= 21 || playerScore < 21 && computerScore === 21) {
       document.getElementById('lost').classList.add('show');
       document.querySelector('.backdrop').classList.add('open');
       setTimeout(() => {
@@ -68,7 +68,7 @@ class Score {
         Game.newGame();
       }, 3000)
 
-    } else if (playerScore <= 21 && computerScore > 21) {
+    } else if (playerScore <= 21 && computerScore > 21 || playerScore === 21 && computerScore < 21) {
       document.getElementById('won').classList.add('show');
       document.querySelector('.backdrop').classList.add('open');
       setTimeout(() => {
@@ -77,7 +77,7 @@ class Score {
         Game.newGame();
       }, 3000)
 
-    } else if (playerScore >= 21 && computerScore >= 21) {
+    } else if (playerScore >= 21 && computerScore >= 21 || playerScore === 21 && computerScore === 21) {
       document.getElementById('draw').classList.add('show');
       document.querySelector('.backdrop').classList.add('open');
       setTimeout(() => {
