@@ -100,11 +100,8 @@ class Score {
     if (currentPlayerScore < 21 && currentComputerScore < 21) {
       this.playerScoreElement.textContent = score.player;
       this.computerScoreElement.textContent = score.computer;
-
-    } else {
       this.checkWinner(score.player, score.computer);
-    }
-    return score;
+    } 
   }
 }
 

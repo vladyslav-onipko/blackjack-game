@@ -22,6 +22,22 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 1rem;
+  text-decoration: none;
+  font-style: italic;
+  color: #da9f0b;
+  font-size: 1rem;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #093fca;
+}
+
 .backdrop {
   display: none;
   position: fixed;
