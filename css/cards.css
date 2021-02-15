@@ -50,3 +50,7 @@
 .droppable {
   background-color: #ffe0ec;
 }
+
+.card img {
+  height: 100%;
+}

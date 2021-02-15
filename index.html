@@ -11,6 +11,16 @@
   <script src="./scripts/app.js" defer></script>
 </head>
 <body>
+  <div class="backdrop"></div>
+  <div class="result-box" id="lost">
+    <h1>You lost !</h1>
+  </div>
+  <div class="result-box" id="won">
+    <h1>You won !</h1>
+  </div>
+  <div class="result-box" id="draw">
+    <h1>Draw</h1>
+  </div>
   <header class="main-header"></header>
   <main>
     <div class="wraper">
@@ -32,14 +42,11 @@
           <li class="card"></li>
         </ul>
       </div>
-      <div class="button-box">
-        <button class="button" id="take-card">Take card</button>
-      </div>
       <div class="deck">
         <img class="deck__img" src="./images/deck.jpg" alt="card" draggable="true">
       </div>
-      <div class="button-box" id="start-game">
-        <button class="button" id="start">New game</button>
+      <div class="button-box">
+        <button class="button" id="check">Check</button>
       </div>
       <div class="score-panel">
         <h3>SCORE</h3>

@@ -1,13 +1,8 @@
 .button-box {
   position: absolute;
   right: 0;
-  right: 5%;
+  left: 6.5%;
   top: 10%;
-}
-
-#start-game {
-  top: 10%;
-  left: 5%;
 }
 
 .button {
@@ -16,4 +11,8 @@
   color: #082b17;
   font-size: 1.5rem;
   background-color: #fff;
+}
+
+.button:hover {
+  cursor: pointer;
 }
