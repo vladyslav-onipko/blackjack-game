@@ -9,7 +9,7 @@
   height: 15rem;
   right: 2.5%;
   top: 25%;
-  animation: wiggle 300ms 3s 4 ease-out none;
+  animation: wiggle 300ms 1s 4 ease-out none;
 }
 
 .deck:hover {
