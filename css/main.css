@@ -25,11 +25,11 @@ body {
 a {
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 47%;
   margin: 1rem;
   text-decoration: none;
   font-style: italic;
-  color: #da9f0b;
+  color: #000;
   font-size: 1rem;
 }
 
