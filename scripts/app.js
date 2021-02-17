@@ -57,35 +57,70 @@ class Computer {
 class Score {
   playerScoreElement = document.getElementById('user').querySelector('p');
   computerScoreElement = document.getElementById('computer').querySelector('p');
+  checkButton = document.getElementById('check');
 
+  lost(computerScore) {
+    document.getElementById('lost').classList.add('show');
+    document.querySelector('.backdrop').classList.add('open');
+    this.computerScoreElement.textContent = computerScore;
+
+    setTimeout(() => {
+      document.getElementById('lost').classList.remove('show');
+      document.querySelector('.backdrop').classList.remove('open');
+      Game.newGame();
+    }, 3000)
+  }
+
+  won(computerScore) {
+    document.getElementById('won').classList.add('show');
+    document.querySelector('.backdrop').classList.add('open');
+    this.computerScoreElement.textContent = computerScore;
+
+    setTimeout(() => {
+      document.getElementById('won').classList.remove('show');
+      document.querySelector('.backdrop').classList.remove('open');
+      Game.newGame();
+    }, 3000)
+  }
+
+  draw(computerScore) {
+    document.getElementById('draw').classList.add('show');
+    document.querySelector('.backdrop').classList.add('open');
+    this.computerScoreElement.textContent = computerScore;
+
+    setTimeout(() => {
+      document.querySelector('.backdrop').classList.remove('open');
+      document.getElementById('draw').classList.remove('show');
+      Game.newGame();
+    }, 3000)
+  }
+
+  checkButtonHandler(playerScore, computerScore) {
+      if (playerScore < computerScore) {
+        this.lost(computerScore);
+  
+      } else if (playerScore > computerScore) {
+        this.won(computerScore);
+        
+      } else if (playerScore === computerScore) {
+        this.draw(computerScore);
+      }
+  }
+  
   checkWinner(playerScore, computerScore) {
     if (playerScore > 21 && computerScore <= 21 || playerScore < 21 && computerScore === 21) {
-      document.getElementById('lost').classList.add('show');
-      document.querySelector('.backdrop').classList.add('open');
-      setTimeout(() => {
-        document.getElementById('lost').classList.remove('show');
-        document.querySelector('.backdrop').classList.remove('open');
-        Game.newGame();
-      }, 3000)
+      this.lost(computerScore)
 
     } else if (playerScore <= 21 && computerScore > 21 || playerScore === 21 && computerScore < 21) {
-      document.getElementById('won').classList.add('show');
-      document.querySelector('.backdrop').classList.add('open');
-      setTimeout(() => {
-        document.querySelector('.backdrop').classList.remove('open');
-        document.getElementById('won').classList.remove('show');
-        Game.newGame();
-      }, 3000)
+      this.won(computerScore);
 
     } else if (playerScore >= 21 && computerScore >= 21 || playerScore === 21 && computerScore === 21) {
-      document.getElementById('draw').classList.add('show');
-      document.querySelector('.backdrop').classList.add('open');
-      setTimeout(() => {
-        document.querySelector('.backdrop').classList.remove('open');
-        document.getElementById('draw').classList.remove('show');
-        Game.newGame();
-      }, 3000)
+      this.draw(computerScore);
     }
+
+    this.checkButton.replaceWith(this.checkButton.cloneNode(true));
+    this.checkButton = document.getElementById('check');
+    this.checkButton.addEventListener('click', this.checkButtonHandler.bind(this, playerScore, computerScore));
   }
 
   calcScore(playerCard, computerCard) {
@@ -99,9 +134,8 @@ class Score {
 
     if (currentPlayerScore < 21 && currentComputerScore < 21) {
       this.playerScoreElement.textContent = score.player;
-      this.computerScoreElement.textContent = score.computer;
       this.checkWinner(score.player, score.computer);
-    } 
+    }
   }
 }
 
@@ -184,6 +218,7 @@ class Player extends Deck {
 
     computer.putCard(Player.position++);
     this.drowCard(playerCard, event);
+
     target.classList.remove('droppable');
    });
   }
