@@ -1,1 +1,1 @@
-[See this project online](https://mister-developer.github.io/blackjack-game/.)
+[See this project online](https://vladyslav-onipko.github.io/blackjack-game/.)
